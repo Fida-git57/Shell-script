@@ -60,16 +60,16 @@ Types of comments supported by c language
 1. Single Line Comments. --> //
        
 2. Multi Line Comments. -->/*
-							..
-							..
-							*/
+	                    ..
+   	                    ..
+                           */
 							
 In shell script 
 SLC --> #
 MLC --><<Fida
-	    ..
-		..
-		Fida
+	..
+	..
+	Fida
 		
 	. Comments are used to escape from the codes
 	. This part of the code will be ignored by the program interpreter.
@@ -89,3 +89,46 @@ Sytem Defined VARIABLES
 TO know how many SDV are there and what are the SDV:
 	env
 	printenv
+
+ 			
+variable name			
+SHELL=/bin/bash
+	   variable value
+		
+HISTSIZE --> Dfault 1000 (History size)
+To change it --> export HISTSIZE=<VAlue e.g 200> for once
+to change permanently --> .bash_profile
+
+	export --> default values of system defined var values.
+	E.g : export HISTSIZE=200
+
+If we know only the variable name and need to display the corresponding variable value then
+		echo ${variable name}
+
+PWD	--> Variable name 
+pwd --> Command name
+
+USER DEFINED VARIABLES
+	The variables which are created and maintained by the users in script.
+	There is no command to see all the UDV
+	It should be in lower case
+	While executing there should'nt be any gap b/w udv and values.
+
+How we create UDV
+E.G:
+
+int a = 10
+int b = 20
+String Name ="ABC"
+
+shell script--->
+a=10
+b=20
+Name=ABC
+
+echo $a
+echo $b
+echo $Name
+
+System variables
+	Created and maintained by linux bash shell itself.
