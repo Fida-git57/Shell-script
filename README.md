@@ -44,3 +44,48 @@ set -x						-->starting debug mode
 echo "...."
 set +x						-->stopping debug mode
 Only these line will run in debug mode.
+
+---------------------------------------------------------------------------------------------------------------------------------
+FILE NAME CONVENTIONS:
+	A file name can be a maximum of 255 characters
+	The name may contain alphabets,digits,dots and underscore
+	System commands or linux reserve words can not be used for filename
+	It is case sensitive
+
+----------------------------------------------------------------------------------------------------------------------------------
+Comments
+	Comments gives more understandibility of codes
+
+Types of comments supported by c language
+1. Single Line Comments. --> //
+       
+2. Multi Line Comments. -->/*
+							..
+							..
+							*/
+							
+In shell script 
+SLC --> #
+MLC --><<Fida
+	    ..
+		..
+		Fida
+		
+	. Comments are used to escape from the codes
+	. This part of the code will be ignored by the program interpreter.
+	. Adding comments make things easy for the programmer, while editing code in future.
+
+---------------------------------------------------------------------------------------------------------------------	
+VARIABLES
+	It is a memory location where we can store the values.
+
+2types of variables
+	1. Sytem Defined VARIABLES
+	2. User Defined VARIABLES
+	
+Sytem Defined VARIABLES
+	This variables are created and assigned by the system
+	There are many sdv are there
+TO know how many SDV are there and what are the SDV:
+	env
+	printenv
