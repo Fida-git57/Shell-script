@@ -132,3 +132,32 @@ echo $Name
 
 System variables
 	Created and maintained by linux bash shell itself.
+ 
+ ----------------------------------------------------------------------------------------------------------------------------
+ COMMAND LINE ARGUMENTS
+	During shell script execution, values passing  through command prompt is=a called as command line 
+arguments.
+
+For eg., while running a shell script, we can specify the command line arguments as 
+"sh scriptfile.sh aeg1 arg2 arg3"
+ 
+while using command line args follow imp points
+	-we can specify n number of args, there is no limitation.
+	-Each arg is separated by space.
+
+Eg., describes the command line arguments.
+File name: commandlinearg.sh
+
+#!/bin/sh
+#Number of args on the command line.
+echo '$#:'$#
+#process no. of current process.
+echo'$$:'$$
+#Display the 3rd arg on the command line, from left to right.
+echo'$3:'$3
+#Display the name of current shell or program
+echo'$0:'$0
+#display all the args on the command line using * symbol.
+echo'$*:'$*
+#Display all args on the command line using @ symbol.
+echo'$*:'$@
