@@ -161,3 +161,40 @@ echo'$0:'$0
 echo'$*:'$*
 #Display all args on the command line using @ symbol.
 echo'$*:'$@
+
+-------------------------------------------------------------------------------------------------------------------------------------
+Diff b/w $* aND $@
+	The collection of arguments in $* is treated as one string, whereas the 
+collection of arguments in $@ is treated as separeate srtrings.
+
+Escape character
+	when using echo -e, we can use special characters:
+	\\	backlash
+	\a	alert(BEL)
+	\b	backspace
+	\c	supress trailing newline
+	\f	form feed
+	\n	new line
+	\r	carriage return
+	\t	horizontal tab
+	\v	vertical tab
+
+Egs.,
+	File name: escape_characters.sh
+	echo-e"Displaying backlash:\\"
+	echo-e"Making sound(alert):\a"
+	echo-e"Displaying backspace:\b"
+	echo-e"Displaying single quote:\'"
+	echo-e"Displaying double quote:\" "
+	echo-e"new line:\n"
+
+----------------------------------------------------------------------------------------------------------------------
+Strings:
+	Strings are scalar and there is no limit to the size of a string.
+      Any characters, symbols, or words can be used to make up of string.
+
+Defining a string:
+By using single or double quatations 
+"Double quotes"-Anything encloses in double quotes removed meaning of that characters (except\ and $)
+'single quotes'- enclosed in single quotes remains unchanged.
+`back quote`- to execute command
