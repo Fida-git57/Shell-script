@@ -198,3 +198,75 @@ By using single or double quatations
 "Double quotes"-Anything encloses in double quotes removed meaning of that characters (except\ and $)
 'single quotes'- enclosed in single quotes remains unchanged.
 `back quote`- to execute command
+Example:
+FileName: quotes.sh 
+#!/bin/bash 
+single='Single quoted' 
+double="Double quoted" 
+echo $single
+echo $double
+
+Save the above example script as quotes.sh 
+chmod 755 quotes.sh
+./quotes.sh
+
+--------------------------------------------------------------------------------------------------------------------------
+STRING FORMATTING
+
+Character Description
+-n Do not output the trailing new line.
+-e Enable interpretation of the following backslash escaped characters in the strings:
+\a alert (bell)
+\b backspace
+\c suppress trailing new line
+\n new line
+\r carriage return
+\t horizontal tab
+\\ backslash
+Example:
+
+#!/bin/bash
+echo -e "Hello \t Welcome to Linux Shell Scripting"
+
+-----------------------------------------------------------------------------------------------------------------------------
+ARITHEMATIC OPERATIONS
+	We use the keyword "expr" to perform arithematic operations.
+
+Syntax:
+expr op1 math-operator op2
+
+Example:
+
+FileName: arithmetic_operations.sh
+$ expr 3 + 2
+$ expr 3 - 2
+$ expr 10 / 2
+$ expr 20 % 3
+$ expr 10 \* 3
+$ echo `expr 3 + 2`
+
+In shell scripting we will be using the echo command to print the result of the arithmetic operations.
+
+Note:
+If you use echo command, before expr keyword we use ` (back quote) sign. Here both double and single quote will not give you the desired result.
+Try the following commands:
+
+$ echo "expr 3 + 2" # Result expr 3 + 2
+$ echo 'expr 3 + 2' # Result expr 3 + 2
+$ echo `expr 3 + 2` # Result 5
+
+From the above example, we see that if we use double or single quote, the echo command directly prints " expr 3 + 2 ".
+To get the result of this expression, we need to use the back quote.
+
+
+
+
+
+
+
+
+
+
+
+
+
