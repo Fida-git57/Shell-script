@@ -258,6 +258,64 @@ $ echo `expr 3 + 2` # Result 5
 From the above example, we see that if we use double or single quote, the echo command directly prints " expr 3 + 2 ".
 To get the result of this expression, we need to use the back quote.
 
+---------------------------------------------------------------------------------------------
+User Interaction using read command
+
+In some cases the script needs to interact with the user and accept inputs. 
+In shell scripts we use the read statement to take input from the user.
+
+read : read command is used to get the input from the user (Making scripts interactive).
+
+Following shell script demonstrates the take the input from user and display that back to user.
+File Name: readName.sh
+#!/bin/bash
+#Author: Fida Arooj
+
+#Date: 18th May 2025.
+
+echo "Please enter your name:" 
+read userName
+
+echo The name you entered is $userName 
+
+Run the above script as follows:
+#./readName.sh
+
+Output:
+Please enter your name: Fida Arooj
+The name you entered is Fida Arooj
+
+File Name: readMultipleValues.sh
+#!/bin/bash
+#Author: Fida Arooj. 
+#Date: 18th May 2025.
+
+echo "Please enter DevOps Tools/Techniques:"
+read devOpsTool1 devOpsTool2 devOpsTool3 devOpsTool4 devOpsTool5
+
+echo The DevOps Tools/Techniques you entered are $devOpsTool1 , $devOpsTool2 ,
+$devOpsTool3 , $devOpsTool4 ,$devOpsTool5
+
+Output:
+Please enter Devops Tools/Techniques:
+GitHub Maven Jenkins Chef Tomcat
+The Devops Tools/Techniques you entered are GitHub, Mven, Jenkins, Chef, Tomcat
+
+---------------------------------------------------------------------------------------------
+Debugging
+
+For debugging the shell we can use –v, -x and –n options. General syntax is as follows. 
+
+#sh << options >> << script name >>
+(OR)
+#bash << options >> << script name >>
+
+-x : Display commands and their arguments as they are executed.
+-v : Display shell input lines as they are read.
+-n : Read commands but do not execute them. This may be used to check a shell script for syntax errors
+
+Following shell script will accept the numbers from command prompt and, it will display the sum of those two numbers.
+
 
 
 
