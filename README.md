@@ -316,6 +316,215 @@ For debugging the shell we can use –v, -x and –n options. General syntax is 
 
 Following shell script will accept the numbers from command prompt and, it will display the sum of those two numbers.
 
+--------------------------------------------------------------------------------------------------
+Input - Output redirection in Shell Scripts
+
+Using shell scripts, we can redirect - the output of a command to a file 
+or
+- redirect an output file as an input to other commands.
+
+In Shell script there are mainly 3 types of redirect symbols as follows.
+
+1. > Redirect standard output 
+
+Example:
+ls > ls-file.txt
+
+The above command will redirect the output of the " ls " to the file " ls-file ".
+If the file " ls-file " already exist, it will be overwritten. Here you will loose the existing data.
+
+2. >> Append standard output 
+Example:
+date >> ls-file.txt
+
+The output of the date command will be appended to the file " ls-file ".
+In this case you will not loose any data. The new data gets added to the end of the file.
+
+3.< Redirect standard input 
+Example:
+cat < ls-file.txt
+
+This redirection symbol takes input from a file.
+In the above example the cat command takes the input from the file " ls-file " and displays the "ls-file" content.
+
+--------------------------------------------------------------------------------------------------------
+
+if control statement:
+
+Syntax:
+
+if condition
+then
+	Display commands list if condition is true.
+else
+	Display commands list if condition is false.
+fi
+
+Note: if and then must be separated, either with a << new line >> or a semicolon (;). 
+Termination of the if statement is fi.
+
+E.G.,
+File Name: FindBiggestNumber.sh
+
+if [ $n1 -gt $n2 ] && [ $n1 -gt $n3 ] 
+then
+echo "$n1 is the biggest t number" 
+elif [ $n2 -gt $n1 ] && [ $n2 -gt $n3 ]
+then
+echo "$n2 is the biggest t number" 
+elif [ $n3 -gt $n1 ] && [ $n3 -gt $n2 ] then
+echo "$n3 is the biggest number"
+elif [ $1 -eq $2 ] && [ $1 -eq $3 ] && [ $2 -eq $3 ] 
+then
+echo "All the three numbers are equal"
+else
+echo "I can not figure out which number is bigger"
+fi
+Run:
+
+sh findbiggestNumber.sh 1 2 3
+Output:
+3 is the biggest number
+
+-----------------------------------------------------------------------------------------------------
+for loop 
+Syntax:
+	for (condition ) 
+	do
+		execute here all command/script until the condition is
+		not satisfied.(And repeat all statement between do and done)
+	done
+
+Example:
+FIleName: for_loop.sh
+echo "Can you see the following:"
+
+for (( i=1; i<=5; i++ ))
+do
+  echo $i
+  echo ""
+done
+
+Output:
+
+Can you see the following:
+1
+2
+3
+4
+5
+
+------------------------------------------------------------------------------------
+while loop 
+Syntax:
+while [ condition ]
+	do
+	  command1 
+	  command2 
+	  command3
+	  ..
+	  ....
+	done
+
+Example:
+i=5
+while test $i != 0 
+do
+  echo "$i" 
+  echo " "
+  i=`expr $i - 1`
+
+Output:
+5
+4
+3
+2
+1
+
+------------------------------------------------------------------------------------------
+Functions:
+
+When your scripts start to become very large, you may tend to notice that you are repeating code 
+more often in your scripts. You have the ability to create functions inside of your script to help 
+with code reuse. Writing the same code in multiple sections of your script can lead to severe
+maintenance problems
+
+Syntax:
+
+function_name() {
+
+Commands to be execute here...
+
+}
+
+Example:
+Write a function to display Welcome to Shell script! message.
+
+FileName: FunctionExample.sh 
+#!/bin/bash
+
+greetfn(){
+
+echo "Welcome to Shell script! "
+
+}
+
+echo "Calling greetfn()!" 
+greetfn
+
+----------------------------------------------------------------------------------------------
+Pipes:
+
+A pipe is nothing but a temporary storage place where the output of one command is stored and
+then passed as the input for second command. Pipes are used to run more than two commands 
+(Multiple commands) from same command line.
+
+Pipelines connect the standard output of one command directly to the standard input of another. 
+The pipe symbol (|) is used between the commands
+
+Filters
+
+A filter is a program that accepts input, transforms it or does something useful with it and outputs 
+the transformed data. Some important filter commands are awk, tee, grep, sed, spell, and wc.
+
+Example:
+ls -l | grep -a "^d" | tee dir.lst | wc -l 
+
+what the above command does:
+The ls command lists all the files and directories. The grep command takes only the directories.
+Using tee command, we write the result to the file " dir.list " and the wc -l prints the total number
+of lines in that file.
+
+We have used 3 filters in the above example:
+The grep, tee and wc.
+
+------------------------------------------------------------------------------------------------
+Process
+
+Process is kind of program or task in execution.
+Each command, program or a script in linux is a process.
+
+Managing a process
+You might have seen some process taking long time to execute. You can run such process in the background.
+
+Example:
+
+ls/-R|wc-l
+
+The above command can be used to find the total count of the files on your system. 
+This takes a long a time, so to get the command prompt and to start an other process, 
+you can run the above command in background
+
+Running a process in background
+
+ls/-R |wc-l &
+
+The ampersand (&) at the end of command tells the shell to run the command in background. 
+You will a number printed on your screen. It is the process Id.
+So for each process you will have a process Id.
+
+
+
 
 
 
